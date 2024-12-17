@@ -1,0 +1,31 @@
+
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c11 -g
+
+
+TARGET = CGame
+SRC = main.c game.c
+OBJ = $(SRC:.c=.o)
+DEPS = game.h
+
+
+all: $(TARGET)
+
+
+$(TARGET): $(OBJ)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJ)
+
+
+%.o: %.c $(DEPS)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+
+clean:
+	rm -f $(OBJ) $(TARGET)
+
+
+clean-all: clean
+	rm -f *~ *.bak
+
+run: $(TARGET)
+	./$(TARGET)
