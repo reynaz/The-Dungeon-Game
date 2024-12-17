@@ -4,6 +4,7 @@
 My game begins at a dungeon room. A guard wait for the player in front of the dungeon room. If the players can defeat the guard they can exit the dungeon room and continue by changing room. Player encounters items and creatures in every room. In such a case player can pick up the items and attack to the creature.
 
 How the winner determined while attacking? 
+
 Player, guard and creatures have strength value in their struct 
 The attack method compares their strength. The one who has bigger strength wins.
 In the beginning, the player is guaranteed to have more strength value
